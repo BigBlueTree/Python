@@ -19,4 +19,9 @@ print('표본 표준편차:',stdev(dataset))
 import builtins
 print(dir(builtins))
 
+#from lib11.math_test import pytha,pytha2
+import lib11.math_test
+
+lib11.math_test.pytha(3,4)
+
 
