@@ -11,14 +11,14 @@ for i in range(10):
     sheet.cell(row=(i+1), column=3, value=i)
 
 sheet2 = wbook.create_sheet("구구단")
-for y in range(1,10):
-    for x in range(1,10):
+for y in range(1, 10):
+    for x in range(1, 10):
         wcell = sheet2.cell(row=y, column=x)
-        wcell.value = x * y
+        wcell.value = x*y
 
 sheet3 = wbook.create_sheet("99x99")
-for y in range(1,100):
-    for x in range(1,100):
+for y in range(1, 100):
+    for x in range(1, 100):
         wcell = sheet3.cell(y, x)
         wcell.value = x * y
 
@@ -34,13 +34,13 @@ print(sheet2.cell(row=2,column=8).value)
 
 for y in range(2, 5):
     r = []
-    for x in range(2, 5):
-        v = sheet2.cell(row=y, column=x).value
+    for x in range(2,5):
+        v = sheet2.cell(row=y, colume=x).value
         r.append(v)
     print(r)
-
+    
 for row in sheet2["B3":"D5"]:
-    r = []
+    r=[]
     for cell in row:
         r.append(cell.value)
     print(r)
@@ -48,21 +48,4 @@ for row in sheet2["B3":"D5"]:
 for row in sheet2["B4":"D6"]:
     print([c.value for c in row])
     
-it = sheet2.iter_rows(
-        min_row=2, min_col=2,
-        max_row=4, max_col=4)
-
-for row in it:
-    print([c.value for c in row]) 
-    # r = []
-    # for cell in row:
-    #     r.append(cell.value)
-    # print(r)
-
-cell = sheet2["C2"]
-(row, col) = (cell.row, cell.column)
-print("C2=({},{})".format(row, col))
-
-cell = sheet2.cell(row=2, column=3)
-cdt = cell.coordinate
-print("(2,3)={}".format(cdt))
+it = sheet2.iter_rows()
